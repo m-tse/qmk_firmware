@@ -17,8 +17,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_5x6(
         KC_GRV, TD(T1), TD(T2), TD(T3), TD(T4), TD(T5),    KC_6,    KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,
         KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,      KC_Y,    KC_U,   KC_I,   KC_O,   KC_P,   KC_BSLS,
-LSFT_T(KC_ESC), KC_A,   KC_S,   KC_D,   KC_F,   KC_G,      KC_H,    KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,
- KC_LCTL,WIN_T(KC_Z),   KC_X,   KC_C,   KC_V,   KC_B,      KC_N,    KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,
+LSFT_T(KC_ESC), KC_A,   KC_S,   KC_D,   KC_F,   KC_G,      KC_H,    KC_J,   KC_K,   KC_L,   KC_QUOT,RSFT_T(KC_SCLN),
+ KC_LCTL,WIN_T(KC_Z),   KC_X,   KC_C,   KC_V,   KC_B,      KC_N,    KC_M,   KC_COMM,KC_DOT, WIN_T(KC_SLSH),KC_RCTL,
                         KC_PAUS,KC_EQL,                                     KC_LBRC,KC_RBRC,
                                         KC_LALT,KC_SPC,    KC_BSPC,KC_ENT,
                                         KC_LGUI,OSL(3),    OSL(3),LAYER_CLEAR,
@@ -64,6 +64,8 @@ LSFT_T(KC_ESC), KC_A,   KC_S,   KC_D,   KC_F,   KC_G,      KC_H,    KC_J,   KC_K
 bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case WIN_T(KC_Z):
+            return true;
+        case WIN_T(KC_SLSH):
             return true;
         default:
             return false;
