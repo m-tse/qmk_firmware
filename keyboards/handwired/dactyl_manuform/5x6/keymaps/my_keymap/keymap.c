@@ -91,3 +91,14 @@ LSFT_T(KC_ESC), KC_A,   KC_S,   KC_D,   KC_F,   KC_G,                   KC_H,   
                                         _______,_______,                _______,_______
   ),
 };
+
+// I want shift to work quickly, however I want the meta mod tap key to work a bit slower,
+// which allows typing `zsh` without doing a "meta + s" combination.
+bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case WIN_T(KC_Z):
+            return true;
+        default:
+            return false;
+    }
+}
