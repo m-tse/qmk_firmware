@@ -26,10 +26,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 };
 
+// Tap Dance declarations
+enum {
+    T1,
+    T2,
+    T3,
+    T4,
+    T5,
+};
+
+// Tap Dance definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for the number, twice for the F-key.
+    [T1] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_F1),
+    [T2] = ACTION_TAP_DANCE_DOUBLE(KC_2, KC_F2),
+    [T3] = ACTION_TAP_DANCE_DOUBLE(KC_3, KC_F3),
+    [T4] = ACTION_TAP_DANCE_DOUBLE(KC_4, KC_F4),
+    [T5] = ACTION_TAP_DANCE_DOUBLE(KC_5, KC_F5),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = LAYOUT_5x6(
-        KC_GRV, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,
+        KC_GRV, TD(T1), TD(T2), TD(T3), TD(T4), TD(T5),                 KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,
         KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,                   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSLS,
 LSFT_T(KC_ESC), KC_A,   KC_S,   KC_D,   KC_F,   KC_G,                   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,LSFT_T(KC_QUOT),
  KC_LCTL,WIN_T(KC_Z),   KC_X,   KC_C,   KC_V,   KC_B,                   KC_N,   KC_M,   KC_COMM,KC_DOT, WIN_T(KC_SLSH),KC_RCTL,
