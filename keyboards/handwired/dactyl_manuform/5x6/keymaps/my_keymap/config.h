@@ -30,3 +30,8 @@
 // Tapping term is used for many things, e.g.
 // - how fast I need to double tap the number keys to get an F key
 #define TAPPING_TERM 200
+
+// Decrease mousekey interval for smoother scrolling.
+#define MOUSEKEY_INTERVAL 16
+// With decreased mousekey interval, we should lower the max speed to compensate.
+#define MOUSEKEY_MAX_SPEED 5
