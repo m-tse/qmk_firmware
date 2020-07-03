@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 
 enum custom_keycodes {
-    LAYER_CLEAR = SAFE_RANGE,
+    LYR_CLR = SAFE_RANGE, // Clear Layer
 };
 
 // Tap Dance declarations
@@ -15,14 +15,14 @@ enum {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_5x6(
-        KC_GRV, TD(T1), TD(T2), TD(T3), TD(T4), TD(T5),    KC_6,    KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,
-        KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,      KC_Y,    KC_U,   KC_I,   KC_O,   KC_P,   KC_BSLS,
-LSFT_T(KC_ESC), KC_A,   KC_S,   KC_D,   KC_F,   KC_G,      KC_H,    KC_J,   KC_K,   KC_L,   KC_QUOT,RSFT_T(KC_SCLN),
- KC_LCTL,WIN_T(KC_Z),   KC_X,   KC_C,   KC_V,   KC_B,      KC_N,    KC_M,   KC_COMM,KC_DOT, WIN_T(KC_SLSH),KC_RCTL,
+        KC_GRV, TD(T1), TD(T2), TD(T3), TD(T4), TD(T5),     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,
+        KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSLS,
+LSFT_T(KC_ESC), KC_A,   KC_S,   KC_D,   KC_F,   KC_G,       KC_H,   KC_J,   KC_K,   KC_L,   KC_QUOT,RSFT_T(KC_SCLN),
+ KC_LCTL,WIN_T(KC_Z),   KC_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, WIN_T(KC_SLSH),KC_RCTL,
                         KC_PAUS,KC_EQL,                                     KC_LBRC,KC_RBRC,
-                                        KC_LALT,KC_SPC,    KC_BSPC,KC_ENT,
-                                        KC_LGUI,OSL(3),    OSL(3),LAYER_CLEAR,
-                                        TO(1),  OSL(3),    KC_CAPS,TO(2)
+                                        KC_LALT,KC_SPC,     KC_BSPC,KC_ENT,
+                                        LYR_CLR,OSL(3),     OSL(3), LYR_CLR,
+                                        TO(1),  TO(4),      KC_CAPS,TO(2)
   ),
 
   [1] = LAYOUT_5x6(
@@ -57,6 +57,17 @@ LSFT_T(KC_ESC), KC_A,   KC_S,   KC_D,   KC_F,   KC_G,      KC_H,    KC_J,   KC_K
                                         _______,_______,    _______,_______,
                                         _______,_______,    _______,_______
   ),
+  // Turn off dual function keys and move shift keys back to normal location.
+  [4] = LAYOUT_5x6(
+        _______,KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       _______,_______,_______,_______,_______,_______,
+        _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
+        KC_ESC, _______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,KC_SCLN,
+        KC_LSFT,KC_Z,   _______,_______,_______,_______,    _______,_______,_______,_______,KC_SLSH,KC_RSFT,
+                        _______,_______,                                    _______,_______,
+                                        _______,_______,    _______,_______,
+                                        _______,_______,    _______,_______,
+                                        _______,_______,    _______,_______
+  ),
 };
 
 // I want shift to work quickly, however I want the meta mod tap key to work a bit slower,
@@ -84,12 +95,12 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case LAYER_CLEAR:
+    case LYR_CLR:
         if (record->event.pressed) {
-            // when keycode LAYER_CLEAR is pressed
+            // when keycode LYR_CLR is pressed
             layer_clear();
         } else {
-            // when keycode LAYER_CLEAR is released
+            // when keycode LYR_CLR is released
         }
         break;
     }
