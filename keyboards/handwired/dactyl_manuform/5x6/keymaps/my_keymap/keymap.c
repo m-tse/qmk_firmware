@@ -43,15 +43,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         TO(1),  TO(4),      KC_CAPS,TO(2)
     ),
 
-    // A left hand navigation layer, with right hand on mouse, or right hand on right keyboard with mouse keys.
+    // A left hand navigation layer, with right hand on mouse.
     // LWIN on space key for arrow key + windows key manipulation.
     [1] = LAYOUT_5x6(
         _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
-        _______,KC_HOME,_______,KC_UP,  _______,KC_PGUP,    _______,KC_BTN1,KC_MS_U,KC_BTN2,_______,_______,
-        _______,KC_END, KC_LEFT,KC_DOWN,KC_RGHT,KC_PGDN,    _______,KC_MS_L,KC_MS_D,KC_MS_R,_______,_______,
+        _______,KC_HOME,_______,KC_UP,  _______,KC_PGUP,    _______,_______,_______,_______,_______,_______,
+        _______,KC_END, KC_LEFT,KC_DOWN,KC_RGHT,KC_PGDN,    _______,_______,_______,_______,_______,_______,
         _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
                         _______,_______,                                    _______,_______,
-                                        _______,KC_LWIN,    KC_BTN1,KC_BTN2,
+                                        _______,KC_LWIN,    _______,_______,
                                         _______,_______,    _______,_______,
                                         _______,_______,    _______,_______
     ),
