@@ -126,7 +126,6 @@ bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-// Tap Dance definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for the number, twice for the F-key.
     [T1] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_F1),
@@ -140,10 +139,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
     case LYR_CLR:
         if (record->event.pressed) {
-            // when keycode LYR_CLR is pressed
             layer_clear();
-        } else {
-            // when keycode LYR_CLR is released
         }
         break;
     }
