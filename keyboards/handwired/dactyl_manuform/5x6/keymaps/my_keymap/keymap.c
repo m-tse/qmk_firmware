@@ -17,6 +17,10 @@ enum {
 #define WIN_Z WIN_T(KC_Z)
 #define WIN_SLS WIN_T(KC_SLSH)
 #define SHF_CLN RSFT_T(KC_SCLN)
+#define L_NAV TO(1)
+#define L_GAME TO(4)
+#define L_NUM TO(2)
+#define L_SYM MO(3)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Philosophy around default layout:
@@ -41,8 +45,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // |       |       |       |       |       |           |       |       |       |       |       |
                         KC_MINS,KC_EQL,                                     KC_LBRC,KC_RBRC,
                                         KC_LALT,KC_SPC,     KC_BSPC,KC_ENT,
-                                        LYR_CLR,MO(3),      MO(3),  LYR_CLR,
-                                        TO(1),  TO(4),      KC_CAPS,TO(2)
+                                        LYR_CLR,L_SYM,      L_SYM,  LYR_CLR,
+                                        L_NAV,  L_GAME,     KC_CAPS,L_NUM
     // |       |       |       |       |       |           |       |       |       |       |       |
 
     ),
