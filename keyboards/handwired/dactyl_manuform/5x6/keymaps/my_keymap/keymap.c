@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______,_______,    _______,_______
     ),
 
-    // Turn off dual function keys and move shift keys back to normal location, useful for gaming?
+    // Gaming layer, turn off dual function keys for maximum responsiveness.
     [4] = LAYOUT_5x6(
         _______,KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       _______,_______,_______,_______,_______,_______,
         _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
