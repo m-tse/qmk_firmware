@@ -33,63 +33,79 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //   over the space key. So I add double tap F1 through F5 for 5 windows. I don't do this for the other number keys
     //   because it does reduce responsiveness of the keys.
     [0] = LAYOUT_5x6(
+    // |       |       |       |       |       |           |       |       |       |       |       |
         KC_GRV, TD(T1), TD(T2), TD(T3), TD(T4), TD(T5),     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_PAUS,
         KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSLS,
         SHF_ESC,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,       KC_H,   KC_J,   KC_K,   KC_L,   KC_QUOT,SHF_CLN,
         KC_LCTL,WIN_Z,  KC_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, WIN_SLS,KC_RCTL,
+    // |       |       |       |       |       |           |       |       |       |       |       |
                         KC_MINS,KC_EQL,                                     KC_LBRC,KC_RBRC,
                                         KC_LALT,KC_SPC,     KC_BSPC,KC_ENT,
                                         LYR_CLR,OSL(3),     OSL(3), LYR_CLR,
                                         TO(1),  TO(4),      KC_CAPS,TO(2)
+    // |       |       |       |       |       |           |       |       |       |       |       |
+
     ),
 
     // A left hand navigation layer, with right hand on mouse.
     // LWIN on space key for arrow key + windows key manipulation.
     [1] = LAYOUT_5x6(
+    // |       |       |       |       |       |           |       |       |       |       |       |
         _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
         _______,KC_HOME,_______,KC_UP,  _______,KC_PGUP,    _______,_______,_______,_______,_______,_______,
         _______,KC_END, KC_LEFT,KC_DOWN,KC_RGHT,KC_PGDN,    _______,_______,_______,_______,_______,_______,
         _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
+    // |       |       |       |       |       |           |       |       |       |       |       |
                         _______,_______,                                    _______,_______,
                                         _______,KC_LWIN,    _______,_______,
                                         _______,_______,    _______,_______,
                                         _______,_______,    _______,_______
+    // |       |       |       |       |       |           |       |       |       |       |       |
     ),
 
     // Numpad on both left and right.
     [2] = LAYOUT_5x6(
+    // |       |       |       |       |       |           |       |       |       |       |       |
         _______,_______,_______,KC_PSLS,KC_PAST,KC_PMNS,    _______,_______,KC_PSLS,KC_PAST,KC_PMNS,_______,
         _______,_______,KC_KP_7,KC_KP_8,KC_KP_9,KC_PPLS,    _______,KC_KP_7,KC_KP_8,KC_KP_9,KC_PPLS,_______,
         _______,_______,KC_KP_4,KC_KP_5,KC_KP_6,KC_PPLS,    _______,KC_KP_4,KC_KP_5,KC_KP_6,KC_PPLS,_______,
         _______,_______,KC_KP_1,KC_KP_2,KC_KP_3,KC_PENT,    _______,KC_KP_1,KC_KP_2,KC_KP_3,KC_PENT,_______,
+    // |       |       |       |       |       |           |       |       |       |       |       |
                         KC_KP_0,KC_PDOT,                                    KC_KP_0,KC_PDOT,
                                         KC_PENT,KC_PENT,    _______,KC_KP_0,
                                         _______,_______,    _______,_______,
                                         _______,_______,    _______,_______
+    // |       |       |       |       |       |           |       |       |       |       |       |
     ),
 
     // Aspirational number/symbol layer.
     [3] = LAYOUT_5x6(
+    // |       |       |       |       |       |           |       |       |       |       |       |
         _______,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,      KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12,
         _______,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,      KC_F7,  KC_F8,  KC_F9,  KC_MINS,KC_EQL, _______,
         _______,KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   _______,
         _______,_______,_______,_______,KC_GRV, _______,    _______,_______,_______,KC_LBRC,KC_RBRC,_______,
+    // |       |       |       |       |       |           |       |       |       |       |       |
                         _______,_______,                                    KC_VOLD,KC_VOLU,
                                         _______,_______,    _______,_______,
                                         _______,_______,    _______,_______,
                                         _______,_______,    _______,_______
+    // |       |       |       |       |       |           |       |       |       |       |       |
     ),
 
     // Gaming layer, turn off dual function keys for maximum responsiveness.
     [4] = LAYOUT_5x6(
+    // |       |       |       |       |       |           |       |       |       |       |       |
         _______,KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       _______,_______,_______,_______,_______,_______,
         _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
         KC_LSFT,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,KC_RSFT,
         KC_LCTL,KC_Z,   _______,_______,_______,_______,    _______,_______,_______,_______,KC_SLSH,KC_RCTL,
+    // |       |       |       |       |       |           |       |       |       |       |       |
                         _______,_______,                                    _______,_______,
                                         _______,_______,    _______,_______,
                                         _______,_______,    _______,_______,
                                         _______,_______,    _______,_______
+    // |       |       |       |       |       |           |       |       |       |       |       |
     ),
 };
 
