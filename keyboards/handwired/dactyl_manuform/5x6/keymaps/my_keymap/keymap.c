@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     ),
 
-    // A left hand navigation layer, with right hand on mouse.
+    // A left hand navigation layer.
     // LWIN on space key for arrow key + windows key manipulation.
     [1] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
