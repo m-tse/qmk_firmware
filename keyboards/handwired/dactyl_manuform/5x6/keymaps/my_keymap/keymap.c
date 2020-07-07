@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // |       |       |       |       |       |           |       |       |       |       |       |
     ),
 
-    // Numpad on both left and right.
+    // Numpad on left.
     [2] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
         _______,_______,_______,KC_PSLS,KC_PAST,KC_PMNS,    _______,_______,_______,_______,_______,_______,
