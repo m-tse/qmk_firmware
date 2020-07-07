@@ -70,13 +70,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Numpad on both left and right.
     [2] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
-        _______,_______,_______,KC_PSLS,KC_PAST,KC_PMNS,    _______,_______,KC_PSLS,KC_PAST,KC_PMNS,_______,
-        _______,_______,KC_KP_7,KC_KP_8,KC_KP_9,KC_PPLS,    _______,KC_KP_7,KC_KP_8,KC_KP_9,KC_PPLS,_______,
-        _______,_______,KC_KP_4,KC_KP_5,KC_KP_6,KC_PPLS,    _______,KC_KP_4,KC_KP_5,KC_KP_6,KC_PPLS,_______,
-        _______,_______,KC_KP_1,KC_KP_2,KC_KP_3,KC_PENT,    _______,KC_KP_1,KC_KP_2,KC_KP_3,KC_PENT,_______,
+        _______,_______,_______,KC_PSLS,KC_PAST,KC_PMNS,    _______,_______,_______,_______,_______,_______,
+        _______,_______,KC_KP_7,KC_KP_8,KC_KP_9,KC_PPLS,    _______,_______,_______,_______,_______,_______,
+        _______,_______,KC_KP_4,KC_KP_5,KC_KP_6,KC_PPLS,    _______,_______,_______,_______,_______,_______,
+        _______,_______,KC_KP_1,KC_KP_2,KC_KP_3,KC_PENT,    _______,_______,_______,_______,_______,_______,
     // |       |       |       |       |       |           |       |       |       |       |       |
-                        KC_KP_0,KC_PDOT,                                    KC_KP_0,KC_PDOT,
-                                        KC_PENT,KC_PENT,    _______,KC_KP_0,
+                        KC_KP_0,KC_PDOT,                                    _______,_______,
+                                        KC_PENT,KC_PENT,    _______,_______,
                                         _______,_______,    _______,_______,
                                         _______,_______,    _______,_______
     // |       |       |       |       |       |           |       |       |       |       |       |
