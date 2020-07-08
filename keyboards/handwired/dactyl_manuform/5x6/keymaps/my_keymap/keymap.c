@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         KC_MINS,KC_EQL,                                     KC_LBRC,KC_RBRC,
                                         KC_LALT,KC_SPC,     KC_BSPC,KC_ENT,
                                         LYR_CLR,L_SYM,      L_SYM,  LYR_CLR,
-                                        L_NAV,  L_GAME,     KC_CAPS,L_NUM
+                                        L_NAV,  L_NUM,      KC_CAPS,L_GAME
     // |       |       |       |       |       |           |       |       |       |       |       |
 
     ),
