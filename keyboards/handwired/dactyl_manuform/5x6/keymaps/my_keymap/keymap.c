@@ -2,7 +2,6 @@
 
 enum custom_keycodes {
     LYR_CLR = SAFE_RANGE, // Clear Layer
-    TMUX,
 };
 
 // Tap Dance declarations
@@ -23,6 +22,7 @@ enum {
 #define L_NUM TO(2)
 #define L_SYM MO(3)
 #define WRM LALT(LCTL(KC_BRK)) // Minimizes Windows Remote Desktop
+#define TMUX LCTL(KC_X)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Philosophy around default layout:
@@ -142,11 +142,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case LYR_CLR:
         if (record->event.pressed) {
             layer_clear();
-        }
-        break;
-    case TMUX:
-        if (record->event.pressed) {
-            SEND_STRING(SS_LCTL("x"));;
         }
         break;
     }
