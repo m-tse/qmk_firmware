@@ -22,6 +22,7 @@ enum {
 #define L_NUM TO(2)
 #define L_SYM MO(3)
 #define TMUX LCTL(KC_X)
+#define L_F LT(5, KC_GRAVE)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Philosophy around default layout:
@@ -35,11 +36,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //   the home row, so it seems a worthwhile tradeoff.
     // - The F-keys are perfect for swapping spaces/desktops in both windows and mac. It is too error-prone to hold an
     //   extra thumb cluster key and then hit a number key for desktop swapping, especially since it would require hopping
-    //   over the space key. So I add double tap F1 through F5 for 5 windows. I don't do this for the other number keys
-    //   because it does reduce responsiveness of the keys.
+    //   over the space key. So I added a layer tap on top of the tilde key. Tap it for backtick/tilde, hold it to go to
+    //   the F key layer.
     [0] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
-        KC_GRV, TD(T1), TD(T2), TD(T3), TD(T4), TD(T5),     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   TMUX,
+        L_F,    KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   TMUX,
         KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSLS,
         SHF_ESC,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,       KC_H,   KC_J,   KC_K,   KC_L,   KC_QUOT,SHF_CLN,
         KC_LCTL,WIN_Z,  KC_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, WIN_SLS,KC_RCTL,
@@ -112,6 +113,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______,_______,    _______,_______
     // |       |       |       |       |       |           |       |       |       |       |       |
     ),
+    // Easy to access F key layer.
+    [5] = LAYOUT_5x6(
+    // |       |       |       |       |       |           |       |       |       |       |       |
+        _______,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,      _______,_______,_______,_______,_______,_______,
+        _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
+        _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
+        _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
+    // |       |       |       |       |       |           |       |       |       |       |       |
+                        _______,_______,                                    _______,_______,
+                                        _______,_______,    _______,_______,
+                                        _______,_______,    _______,_______,
+                                        _______,_______,    _______,_______
+    // |       |       |       |       |       |           |       |       |       |       |       |
+    ),
 };
 
 // I want shift to work quickly, however I want the meta mod tap key to work a bit slower,
@@ -127,15 +142,6 @@ bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-qk_tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for the number, twice for the F-key.
-    [T1] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_F1),
-    [T2] = ACTION_TAP_DANCE_DOUBLE(KC_2, KC_F2),
-    [T3] = ACTION_TAP_DANCE_DOUBLE(KC_3, KC_F3),
-    [T4] = ACTION_TAP_DANCE_DOUBLE(KC_4, KC_F4),
-    [T5] = ACTION_TAP_DANCE_DOUBLE(KC_5, KC_F5),
-};
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
     case LYR_CLR:
@@ -146,13 +152,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 };
-
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        // The pinkie is a weaker finger, and it has more trouble double tapping so quickly.
-        case TD(T1):
-            return TAPPING_TERM + 100;
-        default:
-            return TAPPING_TERM;
-    }
-}
