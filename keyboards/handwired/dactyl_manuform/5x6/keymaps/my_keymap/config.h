@@ -29,4 +29,7 @@
 
 // Tapping term is used for many things, e.g.
 // - how fast I need to double tap the number keys to get an F key
+// - for mod-shifts, how long they need to be held to be considered a hold rather than a tap.
 #define TAPPING_TERM 200
+// Allow for more granular per-key tapping terms
+#define TAPPING_TERM_PER_KEY
