@@ -4,25 +4,23 @@ enum custom_keycodes {
     LYR_CLR = SAFE_RANGE, // Clear Layer
 };
 
-// Tap Dance declarations
-enum {
-    T1,
-    T2,
-    T3,
-    T4,
-    T5,
-};
+#define BASE 0
+#define NAVIGATION 1
+#define NUMPAD 2
+#define NUMBER_SYMBOL 3
+#define GAMING 4
+#define FUNCTION 5
 
 #define SHF_ESC LSFT_T(KC_ESC)
 #define WIN_Z WIN_T(KC_Z)
 #define WIN_SLS WIN_T(KC_SLSH)
 #define SHF_CLN RSFT_T(KC_SCLN)
-#define L_NAV TO(1)
-#define L_GAME TO(4)
-#define L_NUM TO(2)
-#define L_SYM MO(3)
+#define L_NAV TO(NAVIGATION)
+#define L_GAME TO(GAMING)
+#define L_NUM TO(NUMPAD)
+#define L_SYM MO(NUMBER_SYMBOL)
 #define TMUX LCTL(KC_X)
-#define L_F LT(5, KC_GRAVE)
+#define L_FUNC LT(FUNCTION, KC_GRAVE)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Philosophy around default layout:
@@ -38,9 +36,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //   extra thumb cluster key and then hit a number key for desktop swapping, especially since it would require hopping
     //   over the space key. So I added a layer tap on top of the tilde key. Tap it for backtick/tilde, hold it to go to
     //   the F key layer.
-    [0] = LAYOUT_5x6(
+    [BASE] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
-        L_F,    KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   TMUX,
+        L_FUNC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   TMUX,
         KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSLS,
         SHF_ESC,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,       KC_H,   KC_J,   KC_K,   KC_L,   KC_QUOT,SHF_CLN,
         KC_LCTL,WIN_Z,  KC_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, WIN_SLS,KC_RCTL,
@@ -55,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // A left hand navigation layer.
     // LWIN on space key for arrow key + windows key manipulation.
-    [1] = LAYOUT_5x6(
+    [NAVIGATION] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
         _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
         _______,KC_HOME,_______,KC_UP,  _______,KC_PGUP,    _______,_______,_______,_______,_______,_______,
@@ -70,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     // Numpad on left.
-    [2] = LAYOUT_5x6(
+    [NUMPAD] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
         _______,_______,_______,KC_PSLS,KC_PAST,KC_PMNS,    _______,_______,_______,_______,_______,_______,
         _______,_______,KC_KP_7,KC_KP_8,KC_KP_9,KC_PPLS,    _______,_______,_______,_______,_______,_______,
@@ -85,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     // Number/symbol layer, provides access to obscure keys closer to the home row.
-    [3] = LAYOUT_5x6(
+    [NUMBER_SYMBOL] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
         KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,      KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12,
         _______,_______,_______,KC_GRV, _______,_______,    _______,_______,KC_MINS,KC_EQL, _______,_______,
@@ -100,9 +98,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     // Gaming layer, turn off dual function keys for maximum responsiveness.
-    [4] = LAYOUT_5x6(
+    [GAMING] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
-        KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       _______,_______,_______,_______,_______,KC_MINS,
+        KC_ESC, _______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,KC_MINS,
         _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
         KC_LSFT,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,KC_RSFT,
         _______,KC_Z,   _______,_______,_______,_______,    _______,_______,_______,_______,KC_SLSH,_______,
@@ -114,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // |       |       |       |       |       |           |       |       |       |       |       |
     ),
     // Easy to access F key layer.
-    [5] = LAYOUT_5x6(
+    [FUNCTION] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
         _______,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,      _______,_______,_______,_______,_______,_______,
         _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
