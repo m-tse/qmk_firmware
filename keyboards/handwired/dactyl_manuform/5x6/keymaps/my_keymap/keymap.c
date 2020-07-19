@@ -27,15 +27,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // - `ctrl` and `meta` keys really need to be near the pinkies. Too much muscle memory, and hopping between
     //   `alt` / `ctrl` over the space bar results in a lot of mistakes.
     // - With the `ctrl` spot taken up, `shift` has to move up by 1, but it's impossible to have good `shift` ergonomics
-    //   with frequently used keys, i.e. `'`, which is often typed very quickly along with a next letter for quoted text.
-    //   When typing quickly, you either get the quote and letter, or the shifted letter, there's no conceivable way to get
-    //   both. So `escape` on the left side is fine since that is not often typed with other keys. On the right side, the
-    //   `'` is way too often used, but could be replaced with `;` which is rarely used. It also improves efficiency of
-    //   the home row, so it seems a worthwhile tradeoff.
+    //   with frequently used keys, i.e. `'`, which is often typed very quickly along with a next letter for quoted
+    //   text. When typing quickly, you either get the quote and letter, or the shifted letter, there's no conceivable
+    //   way to get both. `escape` on the left side is fine since that is not often typed with other keys. On the right
+    //   side, the `` is way too often used, but could be replaced with `;` which is rarely used. It also improves
+    //   efficiency of the home row, so it seems a worthwhile tradeoff.
     // - The F-keys are perfect for swapping spaces/desktops in both windows and mac. It is too error-prone to hold an
-    //   extra thumb cluster key and then hit a number key for desktop swapping, especially since it would require hopping
-    //   over the space key. So I added a layer tap on top of the tilde key. Tap it for backtick/tilde, hold it to go to
-    //   the F key layer.
+    //   extra thumb cluster key and then hit a number key for desktop swapping, especially since it would require 
+    //   hopping over the space key. So I added a layer tap on top of the tilde key. Tap it for backtick/tilde, hold it
+    //   to go to the F key layer.
     [BASE] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
         L_FUNC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   TMUX,
