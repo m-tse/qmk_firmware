@@ -13,7 +13,6 @@ enum custom_keycodes {
 
 #define SHF_ESC LSFT_T(KC_ESC)
 #define WIN_Z WIN_T(KC_Z)
-#define WIN_SLS WIN_T(KC_SLSH)
 #define SHF_CLN RSFT_T(KC_SCLN)
 #define L_NAV TO(NAVIGATION)
 #define L_GAME TO(GAMING)
@@ -40,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         L_FUNC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   _______,
         KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSLS,
         SHF_ESC,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,       KC_H,   KC_J,   KC_K,   KC_L,   KC_QUOT,SHF_CLN,
-        KC_LCTL,WIN_Z,  KC_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, WIN_SLS,KC_RCTL,
+        KC_LCTL,WIN_Z,  KC_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RCTL,
     // |       |       |       |       |       |           |       |       |       |       |       |
                         KC_VOLD,KC_VOLU,                                    _______,_______,
                                         KC_LALT,KC_SPC,     KC_BSPC,KC_ENT,
@@ -102,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC, _______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,KC_MINS,
         _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
         KC_LSFT,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,KC_RSFT,
-        _______,KC_Z,   _______,_______,_______,_______,    _______,_______,_______,_______,KC_SLSH,_______,
+        _______,KC_Z,   _______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
     // |       |       |       |       |       |           |       |       |       |       |       |
                         _______,_______,                                    _______,_______,
                                         _______,_______,    _______,_______,
