@@ -126,12 +126,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 // I want shift to work quickly, however I want the meta mod tap key to work a bit slower,
-// which allows typing `zsh` without doing a "meta + s" combination. Similar logic for the slashes.
+// which allows typing `zsh` without doing a "meta + s" combination.
 bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case WIN_T(KC_Z):
-            return true;
-        case WIN_T(KC_SLSH):
             return true;
         default:
             return false;
