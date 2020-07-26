@@ -46,7 +46,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         LYR_CLR,L_SYM,      L_SYM,  LYR_CLR,
                                         L_NAV,  L_NUM,      KC_CAPS,L_GAME
     // |       |       |       |       |       |           |       |       |       |       |       |
-
     ),
 
     // A left hand navigation layer.
@@ -109,6 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______,_______,    _______,_______
     // |       |       |       |       |       |           |       |       |       |       |       |
     ),
+
     // Easy to access F key layer.
     [FUNCTION] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
