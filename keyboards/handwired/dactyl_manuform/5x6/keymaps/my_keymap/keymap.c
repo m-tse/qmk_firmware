@@ -18,7 +18,7 @@ enum custom_keycodes {
 #define L_GAME TO(GAMING)
 #define L_NUM TO(NUMPAD)
 #define L_SYM MO(NUMBER_SYMBOL)
-#define L_FUNC LT(FUNCTION, KC_ESC)
+#define L_FUNC LT(FUNCTION, KC_GRAVE)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Philosophy around default layout:
