@@ -13,7 +13,6 @@ enum custom_keycodes {
 
 #define SHF_ESC LSFT_T(KC_ESC)
 #define WIN_Z WIN_T(KC_Z)
-#define SHF_CLN RSFT_T(KC_SCLN)
 #define L_NAV TO(NAVIGATION)
 #define L_GAME TO(GAMING)
 #define L_NUM TO(NUMPAD)
@@ -28,17 +27,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //   with frequently used keys, i.e. `'`, which is often typed very quickly along with a next letter for quoted
     //   text. When typing quickly, you either get the quote and letter, or the shifted letter, there's no conceivable
     //   way to get both. `escape` on the left side is fine since that is not often typed with other keys. On the right
-    //   side, the `` is way too often used, but could be replaced with `;` which is rarely used. It also improves
-    //   efficiency of the home row, so it seems a worthwhile tradeoff.
+    //   side, the `'` key is used too often, so I move it up by one, and also move backslash up by one.
     // - The F-keys are perfect for swapping spaces/desktops in both windows and mac. It is too error-prone to hold an
     //   extra thumb cluster key and then hit a number key for desktop swapping, especially since it would require 
     //   hopping over the space key. So I added a layer tap on top of the tilde key. Tap it for backtick/tilde, hold it
     //   to go to the F key layer.
     [BASE] = LAYOUT_5x6(
     // |       |       |       |       |       |           |       |       |       |       |       |
-        L_FUNC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   _______,
-        KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSLS,
-        SHF_ESC,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,       KC_H,   KC_J,   KC_K,   KC_L,   KC_QUOT,SHF_CLN,
+        L_FUNC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_BSLS,
+        KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_QUOT,
+        SHF_ESC,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,       KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_RSFT,
         KC_LCTL,WIN_Z,  KC_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_CAPS,
     // |       |       |       |       |       |           |       |       |       |       |       |
                         KC_VOLD,KC_VOLU,                                    _______,_______,
@@ -99,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // |       |       |       |       |       |           |       |       |       |       |       |
         KC_ESC, _______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,KC_MINS,
         _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
-        KC_LSFT,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,KC_RSFT,
+        KC_LSFT,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
         _______,KC_Z,   _______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
     // |       |       |       |       |       |           |       |       |       |       |       |
                         _______,_______,                                    _______,_______,
