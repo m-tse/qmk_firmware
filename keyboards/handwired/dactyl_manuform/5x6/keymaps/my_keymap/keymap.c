@@ -5,16 +5,12 @@ enum custom_keycodes {
 };
 
 #define BASE 0
-#define NAVIGATION 1
-#define NUMPAD 2
-#define NUMBER_SYMBOL 3
-#define GAMING 4
-#define FUNCTION 5
+#define NUMBER_SYMBOL 1
+#define GAMING 2
+#define FUNCTION 3
 
 #define WIN_Z WIN_T(KC_Z)
-#define L_NAV TO(NAVIGATION)
 #define L_GAME TO(GAMING)
-#define L_NUM TO(NUMPAD)
 #define L_SYM MO(NUMBER_SYMBOL)
 #define L_FUNC LT(FUNCTION, KC_ESC)
 
@@ -41,38 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         KC_DOWN,KC_UP,                                      KC_VOLD,KC_VOLU,
                                         KC_LALT,KC_SPC,     KC_BSPC,KC_ENT,
                                         LYR_CLR,L_SYM,      L_SYM,  LYR_CLR,
-                                        L_NAV,  L_NUM,      KC_CAPS,L_GAME
-    // |       |       |       |       |       |           |       |       |       |       |       |
-    ),
-
-    // A left hand navigation layer.
-    // LWIN on space key for arrow key + windows key manipulation.
-    [NAVIGATION] = LAYOUT_5x6(
-    // |       |       |       |       |       |           |       |       |       |       |       |
-        _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
-        _______,KC_HOME,_______,KC_UP,  _______,KC_PGUP,    _______,KC_KP_7,KC_KP_8,KC_KP_9,KC_PPLS,_______,
-        _______,KC_END, KC_LEFT,KC_DOWN,KC_RGHT,KC_PGDN,    _______,KC_KP_4,KC_KP_5,KC_KP_6,KC_PPLS,_______,
-        _______,_______,_______,_______,_______,_______,    _______,KC_KP_1,KC_KP_2,KC_KP_3,KC_PENT,_______,
-    // |       |       |       |       |       |           |       |       |       |       |       |
-                        _______,_______,                                    KC_KP_0,KC_PDOT,
-                                        _______,KC_LWIN,    _______,_______,
-                                        _______,_______,    _______,_______,
-                                        _______,_______,    _______,_______
-    // |       |       |       |       |       |           |       |       |       |       |       |
-    ),
-
-    // Numpad on left.
-    [NUMPAD] = LAYOUT_5x6(
-    // |       |       |       |       |       |           |       |       |       |       |       |
-        _______,_______,_______,KC_PSLS,KC_PAST,KC_PMNS,    _______,_______,_______,_______,_______,_______,
-        _______,_______,KC_KP_7,KC_KP_8,KC_KP_9,KC_PPLS,    _______,_______,_______,_______,_______,_______,
-        _______,KC_BSPC,KC_KP_4,KC_KP_5,KC_KP_6,KC_PPLS,    _______,_______,_______,_______,_______,_______,
-        _______,_______,KC_KP_1,KC_KP_2,KC_KP_3,KC_PENT,    _______,_______,_______,_______,_______,_______,
-    // |       |       |       |       |       |           |       |       |       |       |       |
-                        KC_KP_0,KC_PDOT,                                    _______,_______,
-                                        KC_PENT,KC_PENT,    _______,_______,
-                                        _______,_______,    _______,_______,
-                                        _______,_______,    _______,_______
+                                        KC_PGDN,KC_PGUP,    KC_CAPS,L_GAME
     // |       |       |       |       |       |           |       |       |       |       |       |
     ),
 
@@ -84,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   _______,
         _______,_______,_______,_______,_______,_______,    _______,_______,KC_LBRC,KC_RBRC,_______,_______,
     // |       |       |       |       |       |           |       |       |       |       |       |
-                        KC_PGDN,KC_PGUP,                                    _______,_______,
+                        KC_END,KC_HOME,                                    _______,_______,
                                         _______,_______,    _______,_______,
                                         _______,_______,    _______,_______,
                                         _______,_______,    _______,_______
