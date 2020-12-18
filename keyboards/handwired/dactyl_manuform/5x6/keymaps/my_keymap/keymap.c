@@ -36,8 +36,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // |       |       |       |       |       |           |       |       |       |       |       |
                         KC_DOWN,KC_UP,                                      KC_VOLD,KC_VOLU,
                                         KC_LALT,KC_SPC,     KC_BSPC,KC_ENT,
-                                        LYR_CLR,L_SYM,      L_SYM,  LYR_CLR,
-                                        KC_PGDN,KC_PGUP,    KC_CAPS,L_GAME
+                                        L_GAME, L_SYM,      L_SYM,  LYR_CLR,
+                                        KC_LEFT,KC_RIGHT,   KC_PGDN,KC_PGUP
     // |       |       |       |       |       |           |       |       |       |       |       |
     ),
 
