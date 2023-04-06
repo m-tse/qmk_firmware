@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //   way to get both. `escape` on the left side is fine since that is not often typed with other keys. On the right
     //   side, the `'` key is used too often, so I move it up by one, and also move backslash up by one.
     // - The F-keys are perfect for swapping spaces/desktops in both windows and mac. It is too error-prone to hold an
-    //   extra thumb cluster key and then hit a number key for desktop swapping, especially since it would require 
+    //   extra thumb cluster key and then hit a number key for desktop swapping, especially since it would require
     //   hopping over the space key. So I added a layer tap on top of the tilde key. Tap it for backtick/tilde, hold it
     //   to go to the F key layer.
     [BASE] = LAYOUT_5x6(
@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         L_FUNC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_BSLS,
         KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_QUOT,
         KC_LSFT,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,       KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_RSFT,
-        KC_LCTL,WIN_Z,  KC_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,_______,
+        KC_LCTL,WIN_Z,  KC_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_DEL,
     // |       |       |       |       |       |           |       |       |       |       |       |
                         KC_LEFT,KC_RIGHT,                                   KC_DOWN,KC_UP,
                                         KC_LALT,KC_SPC,     KC_BSPC,KC_ENT,
