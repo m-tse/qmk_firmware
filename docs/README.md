@@ -11,7 +11,7 @@ run `./util/docker_build.sh handwired/dactyl_manuform/5x6:my_keymap`
 This should have created a file called `handwired_dactyl_manuform_5x6_my_keymap.hex` at the root.
 
 Install QMK toolbox
-
+Flash by opening the hex file in QMK toolbox, resetting the keyboard bootloader, and clicking the Flash button.
 
 
 # Quantum Mechanical Keyboard Firmware
