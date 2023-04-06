@@ -1,3 +1,19 @@
+# MTSE CUSTOM INSTRUCTIONS
+Forget trying to setup your mac to use qmk, use docker instead.
+
+First, install the Docker Application online: https://docs.docker.com/desktop/install/mac-install/
+
+Run `make git-submodule`
+
+Run `docker build . -t mtseqmk:mtseqmk` to build my custom docker image.
+
+run `./util/docker_build.sh handwired/dactyl_manuform/5x6:my_keymap`
+This should have created a file called `handwired_dactyl_manuform_5x6_my_keymap.hex` at the root.
+
+Install QMK toolbox
+
+
+
 # Quantum Mechanical Keyboard Firmware
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
