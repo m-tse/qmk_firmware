@@ -7,7 +7,7 @@ Run `make git-submodule`
 
 Run `docker build . -t mtseqmk:mtseqmk` to build my custom docker image.
 
-run `./util/docker_build.sh handwired/dactyl_manuform/5x6:my_keymap`
+run `./compile_docker.sh`
 This should have created a file called `handwired_dactyl_manuform_5x6_my_keymap.hex` at the root.
 
 Install QMK toolbox
