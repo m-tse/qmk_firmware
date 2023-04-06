@@ -21,13 +21,4 @@ RUN mkdir -p /usr/share/qmk \
  && cd qmk_firmware \
  && git checkout 28723b0c11a673a750129991aae0e40d156e4280
 
-# TEENSY_LOADER_CLI
-# RUN mkdir -p /usr/share/teensy_loader_cli \
-#  && cd /usr/share \
-#  && git clone https://github.com/PaulStoffregen/teensy_loader_cli \
-#  && cd teensy_loader_cli \
-#  && git checkout d239f76f01f922e115c2661a6a3855dfc660a69c \
-#  && make \
-#  && ln -s /usr/share/teensy_loader_cli/teensy_loader_cli /usr/local/bin/teensy_loader_cli
-
 WORKDIR /usr/share/qmk_firmware
