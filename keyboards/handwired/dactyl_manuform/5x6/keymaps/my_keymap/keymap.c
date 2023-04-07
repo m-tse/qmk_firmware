@@ -1,13 +1,12 @@
 #include QMK_KEYBOARD_H
 
 enum custom_keycodes {
-    LYR_CLR = SAFE_RANGE, // Clear Layer
+    SLEEP = SAFE_RANGE,
 };
 
 #define BASE 0
 #define NUMBER_SYMBOL 1
-#define GAMING 2
-#define FUNCTION 3
+#define FUNCTION 2
 
 #define WIN_Z WIN_T(KC_Z)
 #define L_SYM MO(NUMBER_SYMBOL)
@@ -36,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         KC_LEFT,KC_RIGHT,                                   KC_HOME,KC_END,
                                         KC_LALT,KC_SPC,     KC_BSPC,KC_ENT,
                                         KC_UP,  L_SYM,      L_SYM,  KC_CAPS,
-                                        KC_DOWN,_______,    KC_VOLD,KC_VOLU
+                                        KC_DOWN,SLEEP,      KC_VOLD,KC_VOLU
     // |       |       |       |       |       |           |       |       |       |       |       |
     ),
 
@@ -84,9 +83,9 @@ bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case LYR_CLR:
+    case SLEEP:
         if (record->event.pressed) {
-            layer_clear();
+            SEND_STRING(SS_LALT(SS_LCTL("q")));
         }
         break;
     }
