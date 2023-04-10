@@ -18,7 +18,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define NUMBER_SYMBOL 1
 #define FUNCTION 2
 
-// #define WIN_Z WIN_T(KC_Z)
 #define L_SYM MO(NUMBER_SYMBOL)
 #define L_FUNC LT(FUNCTION, KC_ESC)
 
