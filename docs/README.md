@@ -7,6 +7,8 @@ Run `make git-submodule`
 
 Run `docker build . -t mtseqmk:mtseqmk` to build my custom docker image.
 
+Manually launch the Docker Desktop App if not already running.
+
 run `./compile_docker.sh`
 This should have created a file called `handwired_dactyl_manuform_5x6_my_keymap.hex` at the root.
 

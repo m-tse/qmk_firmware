@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         KC_LEFT,KC_RIGHT,                                   KC_HOME,KC_END,
                                         KC_LALT,KC_SPC,     KC_BSPC,KC_ENT,
                                         KC_UP,  L_SYM,      L_SYM,  KC_CAPS,
-                                        KC_DOWN,SLEEP,      KC_VOLD,KC_VOLU
+                                        KC_DOWN,_______,    KC_VOLD,KC_VOLU
     // |       |       |       |       |       |           |       |       |       |       |       |
     ),
 
@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         _______,_______,                                    _______,_______,
                                         _______,_______,    _______,_______,
                                         KC_PGUP,_______,    _______,_______,
-                                        KC_PGDN, _______,    _______,_______
+                                        KC_PGDN,SLEEP,      _______,_______
     // |       |       |       |       |       |           |       |       |       |       |       |
     ),
 
