@@ -20,6 +20,9 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 #define L_SYM MO(NUMBER_SYMBOL)
 #define L_FUNC LT(FUNCTION, KC_ESC)
+// This is a workaround, where my logitech M720 mouse button is hardcoded to hit LCTL+LGUI+TAB, so I need to make the
+// keyboard do the same combination so I can have both a mouse and keyboard way to use mission control.
+#define MISS_CTL LCTL(LGUI(KC_TAB))
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Philosophy around default layout:
@@ -32,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //   side, the `'` key is used too often, so I move it up by one, and also move backslash up by one.
     // - The F-keys are perfect for swapping spaces/desktops in both windows and mac. It is too error-prone to hold an
     //   extra thumb cluster key and then hit a number key for desktop swapping, especially since it would require
-    //   hopping over the space key. So I added a layer tap on top of the tilde key. Tap it for backtick/tilde, hold it
+    //   hopping over the space key. So I added a layer tap on top of the escape key. Tap it for escape, hold it
     //   to go to the F key layer.
     // - I had Z be a hold-for-meta key for awhile, but got too annoyed with Z typos. Now I made LCTL into META when
     //   double tapped.
@@ -74,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,_______,_______,_______,_______,_______,    _______,_______,_______,_______,_______,_______,
     // |       |       |       |       |       |           |       |       |       |       |       |
                         _______,_______,                                    _______,_______,
-                                        _______,_______,    _______,_______,
+                                       MISS_CTL,_______,    _______,_______,
                                         _______,_______,    _______,_______,
                                         _______,_______,    _______,_______
     // |       |       |       |       |       |           |       |       |       |       |       |
