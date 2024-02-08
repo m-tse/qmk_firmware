@@ -18,6 +18,3 @@
 
 // Default diode direction
 #define DIODE_DIRECTION COL2ROW
-
-// Tapping term is used for how fast I must double tap L_CTL to get L_META
-#define TAPPING_TERM 200
